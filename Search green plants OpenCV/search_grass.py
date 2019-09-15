@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
 
-url = 'main.jpg' #url video
+url = 'main.mp4' #url video
 
-cap = cv2.VideoCapture(0)
-img = cv2.imread(url)
+cap = cv2.VideoCapture(url)
+_, img = cap.read()
 img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 img_bin = cv2.inRange(img_hsv, (28,0,0), (100,255,255))
 #cv2.blur(img_bin, (5,5))
